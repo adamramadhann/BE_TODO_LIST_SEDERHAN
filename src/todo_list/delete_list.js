@@ -5,6 +5,8 @@ const delete_list = async (req = request, res = response) => {
     const { id } = req.params  
     const idInt = parseInt(id) 
     try {
+
+         
         const result = await db.list.delete({
             where : {
                 id : idInt
@@ -14,6 +16,8 @@ const delete_list = async (req = request, res = response) => {
             message : "sycces",
             result
         })
+
+
     } catch (error) {
         console.error(error)
         res.status(500).json({
